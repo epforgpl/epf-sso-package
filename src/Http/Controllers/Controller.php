@@ -1,6 +1,6 @@
 <?php
 
-namespace EpfOrgPl\EpfSsoPackage\Http;
+namespace Epforgpl\EpfSsoPackage\Http;
 
 use Illuminate\Routing\Controller as BaseController;
 

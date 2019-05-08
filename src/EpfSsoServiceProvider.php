@@ -1,6 +1,6 @@
 <?php
 
-namespace Epforgpl\EpfSsoPackage;
+namespace EpfOrgPl\EpfSso;
 
 use Illuminate\Support\ServiceProvider;
 

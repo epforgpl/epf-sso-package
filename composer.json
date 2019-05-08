@@ -10,10 +10,15 @@
         "illuminate/support": "~5.7.0",
         "illuminate/view": "~5.7.0"
     },
+    "autoload": {
+        "psr-4": {
+            "EpfOrgPl\\EpfSso\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Epforgpl\\EpfSsoPackage\\EpfSsoServiceProvider"
+                "EpfOrgPl\\EpfSso\\EpfSsoServiceProvider"
             ]
         }
     }

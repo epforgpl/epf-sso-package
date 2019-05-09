@@ -3,6 +3,7 @@
 namespace EpfOrgPl\EpfSso\Http\Auth;
 
 use EpfOrgPl\EpfSso\Http\Controller;
+use EpfOrgPl\EpfSso\Util\OAuthUtil;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
@@ -59,8 +60,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // TODO: Uncomment
-        // $this->redirectTo = OAuthUtil::getAuthorizationCodeRedirect();
+        $this->redirectTo = OAuthUtil::getAuthorizationCodeRedirect();
         return $this->parentLogin($request);
     }
 

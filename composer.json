@@ -19,9 +19,9 @@
     "extra": {
         "laravel": {
             "providers": [
-                "EpfOrgPl\\EpfSso\\EpfSsoServiceProvider",
                 "EpfOrgPl\\EpfSso\\Providers\\AuthServiceProvider",
-                "EpfOrgPl\\EpfSso\\Providers\\EpfHashServiceProvider"
+                "EpfOrgPl\\EpfSso\\Providers\\EpfHashServiceProvider",
+                "EpfOrgPl\\EpfSso\\Providers\\EpfSsoServiceProvider"
             ]
         }
     }

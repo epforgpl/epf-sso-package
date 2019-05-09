@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('epf-sso::layouts.app')
 
 @section('title', 'Zaloguj się')
 

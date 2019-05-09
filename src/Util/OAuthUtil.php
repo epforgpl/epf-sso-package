@@ -21,7 +21,7 @@ class OAuthUtil
         $state = session('epf_state');
 
         if (!$client_id || !$nonce || !$client_redirect_uri || !$scope || !$state) {
-            return '/';
+            return '/sso-home';
         }
 
         $server_redirect_uri = 'oauth/authorization';

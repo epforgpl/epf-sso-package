@@ -21,3 +21,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
     */
 });
+
+Route::view('/sso-home', 'epf-sso::home.home')->middleware('auth');

@@ -12,6 +12,9 @@ class EpfSsoServiceProvider extends ServiceProvider {
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'epf-sso');
         $this->publishes([
+            __DIR__ . '/../config/auth.php' => config_path('auth.php'),
+        ], 'config');
+        $this->publishes([
             __DIR__ . '/../public' => public_path('vendor/epforgpl/epf-sso-package'),
         ], 'public');
     }

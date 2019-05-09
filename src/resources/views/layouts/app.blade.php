@@ -14,15 +14,15 @@
     <div id="app">
         <div class="menu-main">
             <a href="https://epf.org.pl" class="navbar-brand">
-                <img src="{{ asset('images/logo-epanstwo.svgz') }}" class="svg" width="187" height="63" alt="Fundacja ePanstwo">
+                <img src="{{ asset('vendor/epforgpl/epf-sso-package/images/logo-epanstwo.svgz') }}" class="svg" width="187" height="63" alt="Fundacja ePanstwo">
             </a>
             <h4 class="mt-4">Logowanie do serwisów Fundacji ePaństwo</h4>
             {{-- Icons defined as section because we want to override them in some sub-templates. --}}
             @section('header-links')
                 <ul class="services mt-3">
-                    <li><a target="_blank" href="https://rejestr.io"><img src="{{ asset('images/services/rejestrio.svg') }}"></a></li>
-                    <li><a target="_blank" href="https://mojeprawo.io"><img src="{{ asset('images/services/mojeprawo.svg') }}"></a></li>
-                    <li><a target="_blank" href="https://sejmometr.pl"><img src="{{ asset('images/services/sejmometr.svg') }}"></a></li>
+                    <li><a target="_blank" href="https://rejestr.io"><img src="{{ asset('vendor/epforgpl/epf-sso-package/images/services/rejestrio.svg') }}"></a></li>
+                    <li><a target="_blank" href="https://mojeprawo.io"><img src="{{ asset('vendor/epforgpl/epf-sso-package/images/services/mojeprawo.svg') }}"></a></li>
+                    <li><a target="_blank" href="https://sejmometr.pl"><img src="{{ asset('vendor/epforgpl/epf-sso-package/images/services/sejmometr.svg') }}"></a></li>
                     {{-- TODO: Uncomment when we want to show archiwum.io
                     <li><a target="_blank" href="https://archiwum.io"><img src="{{ asset('images/services/archiwum.svg') }}"></a></li>
                     --}}

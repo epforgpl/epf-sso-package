@@ -18,6 +18,6 @@ class EpfSsoServiceProvider extends ServiceProvider {
 
     public function register()
     {
-
+        $this->mergeConfigFrom(__DIR__ . '/../config/auth.php', 'epf-sso');
     }
 }

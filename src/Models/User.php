@@ -2,6 +2,7 @@
 
 namespace EpfOrgPl\EpfSso\Models;
 
+use EpfOrgPl\EpfSso\Auth\ResetPasswordNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -29,10 +30,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /*
-     * TODO: Uncomment.
     public function sendPasswordResetNotification($token) {
         $this->notify(new ResetPasswordNotification($token));
     }
-    */
 }

@@ -16,10 +16,13 @@ Route::group(['middleware' => ['web']], function () {
     */
 
     // Password Reset Routes...
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+    Route::get('password/reset', 'EpfOrgPl\EpfSso\Http\Auth\ForgotPasswordController@showLinkRequestForm')
+        ->name('password.request');
+    Route::post('password/email', 'EpfOrgPl\EpfSso\Http\Auth\ForgotPasswordController@sendResetLinkEmail')
+        ->name('password.email');
+    Route::get('password/reset/{token}', 'EpfOrgPl\EpfSso\Http\Auth\ResetPasswordController@showResetForm')
+        ->name('password.reset');
+    Route::post('password/reset', 'EpfOrgPl\EpfSso\Http\Auth\ResetPasswordController@reset');
 
     Route::view('password/change','epf-sso::auth.passwords.change')->name('password.change')->middleware('auth');
     Route::view('password/change-success','epf-sso::auth.passwords.change-success')->middleware('auth');

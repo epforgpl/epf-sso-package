@@ -23,6 +23,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('password/reset/{token}', 'EpfOrgPl\EpfSso\Http\Auth\ResetPasswordController@showResetForm')
         ->name('password.reset');
     Route::post('password/reset', 'EpfOrgPl\EpfSso\Http\Auth\ResetPasswordController@reset');
+    Route::view('password/reset-success', 'epf-sso::auth.passwords.reset-success')->middleware('auth');
 
     Route::view('password/change','epf-sso::auth.passwords.change')->name('password.change')->middleware('auth');
     Route::view('password/change-success','epf-sso::auth.passwords.change-success')->middleware('auth');

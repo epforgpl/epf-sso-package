@@ -22,5 +22,11 @@ Route::group(['middleware' => ['web']], function () {
     */
 
     Route::view('/sso-home', 'epf-sso::home.home')->middleware('auth');
+
+    Route::view('password/change','epf-sso::auth.passwords.change')->name('password.change')->middleware('auth');
+    Route::view('password/change-success','epf-sso::auth.passwords.change-success')->middleware('auth');
+    Route::post('password/change','EpfOrgPl\EpfSso\Http\Auth\ChangePasswordController@changePassword')
+        ->name('password.change.execute')
+        ->middleware('auth');
 });
 

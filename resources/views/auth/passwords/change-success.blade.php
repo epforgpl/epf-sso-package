@@ -1,24 +1,14 @@
-@extends('epf-sso::layouts.app')
+@extends('layouts.app')
 
-@section('title', 'Logowanie do serwisów Fundacji ePaństwo')
+@section('title', 'Zmiana hasła')
 
 @section('content')
     <div class="card card-main card-register">
         <div class="card-body">
-            {{-- TODO: Improve UI. --}}
 
-            <div class="text-center">
-                Jesteś teraz zalogowany/-a jako:
-                <br/><br/>
-                <b>{{ Auth::user()->email }}</b>
-                <br/><br/>
-                <p class="text-muted"><a href="{{ route('password.change') }}">Zmień hasło</a></p>
-                {{-- TODO: Add logout.
-                    <p class="text-muted"><a href="{{ route('logout') }}">Wyloguj</a></p>
-                --}}
+            <div class="alert alert-success">
+                Twoje hasło zostało zmienione.
             </div>
-
-            <hr/>
 
             <div class="text-center">
                 Przejdź do portalu:

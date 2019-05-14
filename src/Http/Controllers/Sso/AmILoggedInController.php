@@ -15,6 +15,7 @@ class AmILoggedInController extends BaseController
 
     public function handleRequest()
     {
+        \Debugbar::disable(); // Otherwise, it returns not only true/false, but also some JS messing things up.
         return Auth::check() ? 'true' : 'false';
     }
 }

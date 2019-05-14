@@ -31,4 +31,11 @@ Route::group(['middleware' => ['web']], function () {
         ->middleware('auth');
 
     Route::view('/sso-home', 'epf-sso::home.home')->middleware('auth');
+
+    Route::get('oauth/authorization', 'EpfOrgPl\EpfSso\Http\Sso\AuthorizationCodeController@handleRequest');
+    Route::post('oauth/token', 'EpfOrgPl\EpfSso\Http\Sso\AccessTokenController@handleRequest');
+    Route::get('oauth/userinfo', 'EpfOrgPl\EpfSso\Http\Sso\UserInfoController@handleRequest');
+    Route::get('oauth/amiloggedin', 'EpfOrgPl\EpfSso\Http\Sso\AmILoggedInController@handleRequest')->middleware('cors');
+    Route::get('oauth/jwks', 'EpfOrgPl\EpfSso\Http\Sso\JwksController@getJwks');
+    Route::get('oauth/logout', 'EpfOrgPl\EpfSso\Http\Sso\LogoutController@logout');
 });

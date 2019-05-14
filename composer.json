@@ -11,6 +11,7 @@
         "illuminate/routing": "~5.7.0",
         "illuminate/support": "~5.7.0",
         "illuminate/view": "~5.7.0",
+        "kelvinmo/simplejwt": "^0.1.5",
         "laravel/framework": "~5.7.0"
     },
     "autoload": {

@@ -10,6 +10,7 @@ class JwksController extends OAuth2BaseController
 
     public function getJwks()
     {
+        \Debugbar::disable(); // Otherwise, it returns not only the JSON with keys, but also some JS messing things up.
         $set = new KeySet();
         $key = $this->server->getStorage('public_key')->getPublicKey();
         $set->add(new RSAKey($key, 'pem'));

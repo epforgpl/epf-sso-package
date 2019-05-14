@@ -3,6 +3,7 @@
     "description": "Centralized login for external users to various EPF services (as a Laravel package).",
     "keywords": ["sso", "login", "laravel"],
     "require": {
+        "barryvdh/laravel-cors": "^0.11.0",
         "bshaffer/oauth2-server-httpfoundation-bridge": "^1.3",
         "bshaffer/oauth2-server-php": "^1.10",
         "illuminate/contracts": "~5.7.0",

@@ -31,7 +31,7 @@ class AuthorizationCodeController extends OAuth2BaseController
             session(['epf_redirect_uri' => $request->input('redirect_uri')]);
             session(['epf_scope' => $request->input('scope')]);
             session(['epf_state' => $request->input('state')]);
-            return redirect()->action('Auth\LoginController@showLoginForm');
+            return redirect()->action('\EpfOrgPl\EpfSso\Http\Auth\LoginController@showLoginForm');
         }
     }
 }

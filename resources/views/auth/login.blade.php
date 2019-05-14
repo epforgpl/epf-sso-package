@@ -44,7 +44,7 @@
                         </button>
                     </p>
                     <p class="mb-1 text-muted"><a href="{{ route('password.request') }}">Nie pamiętasz hasła?</a></p>
-                    <p class="mb-0 text-muted"><a href="/TODO">Utwórz nowe konto</a></p>
+                    <p class="mb-0 text-muted"><a href="{{ route('register') }}">Utwórz nowe konto</a></p>
                     <!--
                     <button class="btn btn-primary" onclick="location.href = '{{ url('/') }}/oauth/google';">
                         Zaloguj się przez Google

@@ -11,6 +11,7 @@ Route::group(['middleware' => ['web']], function () {
     // Registration routes.
     Route::get('register', 'EpfOrgPl\EpfSso\Http\Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'EpfOrgPl\EpfSso\Http\Auth\RegisterController@register');
+    Route::view('register-success', 'epf-sso::auth.register-success')->middleware('auth');
 
     // Password reset routes.
     Route::get('password/reset', 'EpfOrgPl\EpfSso\Http\Auth\ForgotPasswordController@showLinkRequestForm')

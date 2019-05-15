@@ -38,4 +38,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('oauth/amiloggedin', 'EpfOrgPl\EpfSso\Http\Sso\AmILoggedInController@handleRequest');
     Route::get('oauth/jwks', 'EpfOrgPl\EpfSso\Http\Sso\JwksController@getJwks');
     Route::get('oauth/logout', 'EpfOrgPl\EpfSso\Http\Sso\LogoutController@logout');
+
+    Route::get('oauth/facebook', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@redirectToFacebook');
+    Route::get('oauth/facebook/callback', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@handleFacebookCallback');
+    Route::get('oauth/google', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@redirectToGoogle');
+    Route::get('oauth/google/callback', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@handleGoogleCallback');
 });

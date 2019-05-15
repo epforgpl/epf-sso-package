@@ -37,6 +37,6 @@ class EpfSsoServiceProvider extends ServiceProvider {
      */
     private function mapWebRoutes()
     {
-        Route::middleware('web')->group(base_path('../../routes/web.php'));
+        Route::middleware('web')->group(__DIR__ . '/../../routes/web.php');
     }
 }

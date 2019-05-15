@@ -1,7 +1,5 @@
 <?php
 
-Route::get('/epf-sso', 'EpfOrgPl\EpfSso\Http\Controller@index');
-
 // Many of the routes in this file have a special namespace, but are otherwise equivalent to 'Auth::routes();'
 
 Route::get('login', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@showLoginForm')->name('login');
@@ -43,4 +41,3 @@ Route::get('oauth/facebook', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@redirect
 Route::get('oauth/facebook/callback', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@handleFacebookCallback');
 Route::get('oauth/google', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@redirectToGoogle');
 Route::get('oauth/google/callback', 'EpfOrgPl\EpfSso\Http\Auth\LoginController@handleGoogleCallback');
-

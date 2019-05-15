@@ -38,3 +38,10 @@ In App X, you want to set the following env variables (Google & Facebook only in
     SIGN_IN_W_GOOGLE_CLIENT_SECRET=ExampleGoogleSecret
     SIGN_IN_W_FACEBOOK_CLIENT_ID=1234567890
     SIGN_IN_W_FACEBOOK_CLIENT_SECRET=ExampleFacebookSecret
+    
+**DB migrations**
+
+There's a number of migrations to be applied, the same as in `epf-sso` project.
+I don't want to copy them to this project because they are already applied to our prod DB
+and I don't want to risk accidental data corruption, if `php artisan migrate` is also called
+within App X.

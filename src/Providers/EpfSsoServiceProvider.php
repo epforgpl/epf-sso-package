@@ -2,6 +2,7 @@
 
 namespace EpfOrgPl\EpfSso\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class EpfSsoServiceProvider extends ServiceProvider {
@@ -19,6 +20,8 @@ class EpfSsoServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__ . '/../../public' => public_path('vendor/epforgpl/epf-sso-package'),
         ], 'public');
+
+        $this->mapWebRoutes();
     }
 
     public function register()
@@ -27,5 +30,13 @@ class EpfSsoServiceProvider extends ServiceProvider {
         // options from this package's services.php are added to the config. E.g. "config('services.facebook')" will
         // have a value.
         $this->mergeConfigFrom(__DIR__ . '/../../config/services.php', 'services');
+    }
+
+    /**
+     * Apply 'web' middleware to routes defined by this package.
+     */
+    private function mapWebRoutes()
+    {
+        Route::middleware('web')->group(__DIR__ . '/../../routes/web.php');
     }
 }

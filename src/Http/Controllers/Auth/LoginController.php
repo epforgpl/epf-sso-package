@@ -3,10 +3,14 @@
 namespace EpfOrgPl\EpfSso\Http\Auth;
 
 use EpfOrgPl\EpfSso\Http\Controller;
+use EpfOrgPl\EpfSso\Models\SocialUser;
+use EpfOrgPl\EpfSso\Models\User;
 use EpfOrgPl\EpfSso\Util\OAuthUtil;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -64,8 +68,7 @@ class LoginController extends Controller
         return $this->parentLogin($request);
     }
 
-    /*
-     * TODO: Uncomment
+
     public function redirectToFacebook()
     {
         return Socialite::driver('facebook')->redirect();
@@ -75,14 +78,12 @@ class LoginController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
-    */
 
     /**
-     * TODO: Uncomment
      * Obtain the user information from Facebook.
      *
      * @return \Illuminate\Http\RedirectResponse
-
+     */
     public function handleFacebookCallback() : \Illuminate\Http\RedirectResponse
     {
         $this->redirectTo = OAuthUtil::getAuthorizationCodeRedirect();
@@ -91,14 +92,13 @@ class LoginController extends Controller
         Auth::login($user);
         return redirect()->intended($this->redirectTo);
     }
-     * */
+
 
     /**
-     * TODO: Uncomment
      * Obtain the user information from Google.
      *
      * @return \Illuminate\Http\RedirectResponse
-
+     */
     public function handleGoogleCallback() : \Illuminate\Http\RedirectResponse
     {
         $this->redirectTo = OAuthUtil::getAuthorizationCodeRedirect();
@@ -134,5 +134,4 @@ class LoginController extends Controller
         $social_user->save();
         return $user;
     }
-     * */
 }

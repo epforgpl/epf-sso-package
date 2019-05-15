@@ -13,7 +13,6 @@ class EpfSsoServiceProvider extends ServiceProvider {
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'epf-sso');
         $this->publishes([
             __DIR__ . '/../../config/auth.php' => config_path('auth.php'),
-            __DIR__ . '/../../config/services.php' => config_path('services.php'),
         ], 'config');
         $this->publishes([
             __DIR__ . '/../../public' => public_path('vendor/epforgpl/epf-sso-package'),
@@ -23,6 +22,6 @@ class EpfSsoServiceProvider extends ServiceProvider {
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../../config/auth.php', 'epf-sso');
-        $this->mergeConfigFrom(__DIR__ . '/../../config/services.php', 'epf-sso');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/services.php', 'services');
     }
 }
